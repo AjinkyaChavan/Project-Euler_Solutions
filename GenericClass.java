@@ -1,35 +1,26 @@
 
 public class GenericClass<T> {
 
-	private T[] datastore;
-	int size;
-	int pos;
 	
-	public GenericClass(int number){
+	public T[] size;
+	int pos=0;
+	
+	public GenericClass(int data){
 		
-		size=number;
-		pos=0;
-		datastore=(T[]) new Object[size];
-
+		size = (T[]) new Object[data];
+		
 	}
 	
-	public void add(T element){
-		
-		datastore[pos]=element;
-		pos++;
+	
+	void add(T data){
+	
+		size[pos++] = data;
 	}
 	
-	@Override
-	public String toString(){
-		
-		String elements="";
-		
+	void display(){
 		for(int i=0;i<pos;i++){
-			elements+=datastore[i]+" ";
+			System.out.println(size[i]);
 		}
-		return elements;
-	
 	}
 	
-
 }
